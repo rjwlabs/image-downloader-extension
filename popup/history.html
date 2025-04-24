@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Downloaded Images History</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #4169e1;
+            margin-bottom: 20px;
+        }
+        
+        .folder-group {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .folder-title {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .image-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .image-preview {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .image-info {
+            padding: 10px;
+            font-size: 12px;
+        }
+        
+        .image-info p {
+            margin: 5px 0;
+            color: #666;
+        }
+        
+        .no-images {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: flex-start;
+        }
+        
+        .action-buttons button {
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+        }
+        
+        .action-buttons button.primary {
+            background-color: #4169e1;
+            color: white;
+            border-color: #3a5ecf;
+        }
+        
+        .action-buttons button.danger {
+            background-color: #dc3545;
+            color: white;
+            border-color: #dc3545;
+        }
+        
+        .action-buttons button:hover {
+            opacity: 0.9;
+        }
+        
+        #import-input {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Downloaded Images History</h1>
+        <div class="action-buttons">
+            <button id="export-history" class="primary">Export History</button>
+            <button id="import-history">Import History</button>
+            <button id="clear-history" class="danger">Clear History</button>
+            <input type="file" id="import-input" accept=".json">
+        </div>
+        <div id="images-container"></div>
+    </div>
+    
+    <script src="history.js"></script>
+</body>
+</html>

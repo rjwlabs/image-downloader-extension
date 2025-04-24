@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Selector & Downloader</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Image Selector</h1>
+            <button id="view-history" class="secondary">View History</button>
+        </div>
+        
+        <div class="toggle-container">
+            <label class="toggle-switch">
+                <input type="checkbox" id="extension-toggle" checked>
+                <span class="toggle-slider"></span>
+            </label>
+            <label for="extension-toggle">Enable Image Selection</label>
+        </div>
+        
+        <div class="folder-selection">
+            <label for="folder">Download Folder:</label>
+            <input type="text" id="folder" placeholder="downloads/images">
+            <button id="set-folder">Set</button>
+        </div>
+        
+        <div class="selected-images-container">
+            <h2>Selected Images <span id="image-count">(0)</span></h2>
+            <div id="selected-images" class="image-grid"></div>
+        </div>
+        
+        <div class="actions">
+            <button id="select-all">Select All Images</button>
+            <button id="clear-selection">Clear Selection</button>
+            <button id="download-selected" class="primary">Download Selected</button>
+        </div>
+        
+        <div id="download-progress" class="hidden">
+            <div class="progress-bar">
+                <div class="progress-value"></div>
+            </div>
+            <div class="progress-text">Downloading... <span id="progress-count">0/0</span></div>
+            <div class="download-controls">
+                <button id="cancel-download">Cancel</button>
+                <button id="resume-download" class="hidden">Resume</button>
+            </div>
+        </div>
+        
+        <div class="status">
+            <p id="status-message"></p>
+        </div>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>

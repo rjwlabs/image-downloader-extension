@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Image Selector & Downloader",
+  "version": "1.0",
+  "description": "A helper extension for selecting and downloading images from web pages.",
+  "author": "rjw labs - ryan wong",
+  "permissions": ["activeTab", "storage", "downloads"],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.svg",
+      "48": "icons/icon48.svg",
+      "128": "icons/icon128.svg"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.svg",
+    "48": "icons/icon48.svg",
+    "128": "icons/icon128.svg"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/content.js"],
+      "css": ["css/content.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "js/background.js"
+  }
+}

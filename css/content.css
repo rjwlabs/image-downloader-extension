@@ -1,0 +1,44 @@
+.image-selector-overlay {
+    position: absolute;
+    z-index: 10000;
+    cursor: pointer;
+    border: 2px dashed transparent;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+    pointer-events: auto;
+}
+
+.image-selector-overlay:hover {
+    border-color: rgba(65, 105, 225, 0.7); /* Royal blue */
+}
+
+.image-selector-overlay.selected {
+    border-color: rgba(65, 105, 225, 0.9); /* Royal blue */
+    border-style: solid;
+}
+
+.image-selector-overlay.downloaded {
+    border-color: rgba(40, 167, 69, 0.9); /* Green color for downloaded images */
+    border-style: solid;
+}
+
+.image-selector-indicator {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(65, 105, 225, 0.2);
+    display: none;
+}
+
+.image-selector-overlay.selected .image-selector-indicator {
+    background-color: rgba(65, 105, 225, 0.9);
+    display: block;
+}
+
+.image-selector-overlay.downloaded .image-selector-indicator {
+    background-color: rgba(40, 167, 69, 0.9); /* Green color for downloaded images */
+    display: block;
+}
